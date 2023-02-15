@@ -1,0 +1,36 @@
+ul {
+margin: 0;
+padding: 0;
+}
+.title {
+margin: 0;
+padding: 20px 0;
+color: grey;
+font-weight: 500;
+}
+.statistics {
+    margin-top: 20px;
+width: 400px;
+background-color: rgb(255, 255, 255);
+margin-left: auto;
+margin-right: auto;
+text-align: center;
+}
+ .stat-list {
+display: flex;
+justify-content: center;
+
+background-color: blue;
+color: white;
+}
+.percentage {
+display: block;
+font-size: 20px;
+padding-top: 5px;
+}
+
+.stat-list li {
+width: 80px;
+padding: 15px 0;
+}
+
