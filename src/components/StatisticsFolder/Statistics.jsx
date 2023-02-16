@@ -1,25 +1,26 @@
 import PropTypes from 'prop-types';
-import "./Statistics.css"
-import CreatStatisticsElm from "./StatisticsRender/StatisticsRender";
+import Style from './Statistics.module.css';
+import CreatStatisticsElm from './StatisticsRender/StatisticsRender';
 
-const Statistics = ({ title, stats }) => {
-  const elm = stats.map(stats => 
-    <CreatStatisticsElm  key={stats.id} {...stats}  />
-  );
+const Statistics = ({ stats }) => {
+  const elm = stats.map(stats => (
+    <CreatStatisticsElm key={stats.id} {...stats} />
+  ));
   return (
-    <section className="statistics">
-      <h2 className="title">{title}</h2>
-      <ul className="stat-list">{elm}</ul>
+    <section className={Style.statistics}>
+      <h2 className={Style.title}>Upload stats</h2>
+      <ul className={Style['stat-list']}>{elm}</ul>
     </section>
   );
 };
 Statistics.propTypes = {
-    title: PropTypes.string ,
-    stats: PropTypes.arrayOf(PropTypes.shape({
-        id: PropTypes.string,
-        label: PropTypes.string,
-        percentage: PropTypes.number
-    }))
-    
-}
+  title: PropTypes.string,
+  stats: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string,
+      label: PropTypes.string,
+      percentage: PropTypes.number,
+    })
+  ),
+};
 export default Statistics;

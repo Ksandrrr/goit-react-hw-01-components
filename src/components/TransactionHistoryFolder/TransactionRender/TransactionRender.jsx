@@ -1,9 +1,21 @@
+import PropTypes from 'prop-types';
 
-const CreatTransaction = ({...item}) => {
-return <tr>
-    <td>{item.type}</td>
+const TransactionItem = ({ ...item }) => {
+  return (
+    <tr>
+      <td>{item.type}</td>
       <td>{item.amount}</td>
       <td>{item.currency}</td>
     </tr>
-}
-export default CreatTransaction
+  );
+};
+TransactionItem.protoType = {
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string,
+      avatar: PropTypes.string,
+      name: PropTypes.string,
+    })
+  ),
+};
+export default TransactionItem;
