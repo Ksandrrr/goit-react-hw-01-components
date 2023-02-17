@@ -1,4 +1,5 @@
 import Style from '../FriendList.module.css';
+import PropTypes from 'prop-types';
 const listItem = ({ ...friend }) => {
   return (
     <li className={Style.item}>
@@ -15,5 +16,14 @@ const listItem = ({ ...friend }) => {
       <p className={Style.name}>{friend.name}</p>
     </li>
   );
+};
+listItem.protoType = {
+  friends: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number,
+      avatar: PropTypes.string,
+      name: PropTypes.string,
+    })
+  ),
 };
 export default listItem;

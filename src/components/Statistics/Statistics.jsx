@@ -1,14 +1,14 @@
 import PropTypes from 'prop-types';
 import Style from './Statistics.module.css';
-import CreatStatisticsElm from './StatisticsRender/StatisticsRender';
+import StatisticsItem from './StatisticsItem/StatisticsItem';
 
-const Statistics = ({ stats }) => {
+const Statistics = ({ stats, title}) => {
   const elm = stats.map(stats => (
-    <CreatStatisticsElm key={stats.id} {...stats} />
+    <StatisticsItem key={stats.id} {...stats} />
   ));
   return (
     <section className={Style.statistics}>
-      <h2 className={Style.title}>Upload stats</h2>
+    {title && <h2 className={Style.title}>{title}</h2>}
       <ul className={Style['stat-list']}>{elm}</ul>
     </section>
   );

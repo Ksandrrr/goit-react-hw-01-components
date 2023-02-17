@@ -1,12 +1,14 @@
 import PropTypes from 'prop-types';
 import Style from './FriendList.module.css';
-import ListItem from './FriendListRender/FriendListRender';
+import ListItem from './FriendListItem/FriendListItem';
+
 const FriendList = ({ friends }) => {
   const elmFriend = friends.map(friend => (
     <ListItem key={friend.id} {...friend} />
   ));
   return <ul className={Style['friend-list']}>{elmFriend}</ul>;
 };
+
 FriendList.protoType = {
   friends: PropTypes.arrayOf(
     PropTypes.shape({
@@ -16,4 +18,5 @@ FriendList.protoType = {
     })
   ),
 };
+
 export default FriendList;

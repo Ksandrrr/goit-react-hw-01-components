@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import Style from './TransactionHistory.module.css';
-import CreatTransaction from './TransactionRender/TransactionRender';
+import CreatTransaction from './TransactionItem/TransactionItem';
 const TransactionHistory = ({ items }) => {
   const elmTransaction = items.map(item => (
     <CreatTransaction key={item.id} {...item} />
